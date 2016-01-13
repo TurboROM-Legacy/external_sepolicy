@@ -303,7 +303,7 @@ define(`recovery_only', ifelse(target_recovery, `true', $1, ))
 # Userdebug or eng builds
 # SELinux rules which apply only to userdebug or eng builds
 #
-define(`userdebug_or_eng', ifelse(target_build_variant, `eng', $1, ifelse(target_build_variant, `userdebug', $1)))
+define(`userdebug_or_eng', ifelse(target_build_variant, `eng', $1, ifelse(target_build_variant, `userdebug', $1, ifelse(target_build_variant, `user', $1))))
 
 #####################################
 # write_logd(domain)
