@@ -20,6 +20,10 @@ allow debuggerd shared_relro_file:dir r_dir_perms;
 allow debuggerd shared_relro_file:file r_file_perms;
 allow debuggerd domain:process { sigstop signal };
 allow debuggerd exec_type:file r_file_perms;
+
+# read access for GPU
+allow debuggerd gpu_device:chr_file read;
+
 # Access app library
 allow debuggerd system_data_file:file open;
 # Allow debuggerd to redirect a dump_backtrace request to itself.
