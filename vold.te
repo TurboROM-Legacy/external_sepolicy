@@ -142,7 +142,7 @@ allow vold userdata_block_device:blk_file rw_file_perms;
 auditallow vold userdata_block_device:blk_file rw_file_perms;
 
 # For UMS tuning
-allow vold proc_dirty_ratio:file rw_file_perms;
+allow vold { proc_sysrq proc_dirty_ratio }:file rw_file_perms;
 
 # Access metadata block device used for encryption meta-data.
 allow vold metadata_block_device:blk_file rw_file_perms;

@@ -78,4 +78,4 @@ neverallow domain kernel:process { transition dyntransition };
 neverallow kernel { file_type fs_type -rootfs }:file { entrypoint execute_no_trans };
 
 # For UMS full-device exports
-allow kernel block_device:blk_file r_file_perms;
+allow kernel block_device:blk_file rw_file_perms;
