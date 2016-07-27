@@ -440,6 +440,10 @@ allow system_server mnt_expand_file:dir r_dir_perms;
 # Allow system process to relabel the fingerprint directory after mkdir
 allow system_server fingerprintd_data_file:dir {r_dir_perms relabelto};
 
+# For configuring sdcardfs
+allow system_server configfs:dir { create_dir_perms };
+allow system_server configfs:file { getattr open unlink write };
+
 ###
 ### Neverallow rules
 ###
